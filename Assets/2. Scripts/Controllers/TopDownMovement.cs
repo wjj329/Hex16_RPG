@@ -8,8 +8,8 @@ public class TopDownMovement : MonoBehaviour
 
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
 
         transform.position += new Vector3(x, y).normalized * speed * Time.deltaTime;
 
@@ -19,5 +19,7 @@ public class TopDownMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         else
             transform.localScale = new Vector3(1, 1, 1);
+
+        Debug.Log($"{new Vector2(x, y).normalized}");
     }
 }
