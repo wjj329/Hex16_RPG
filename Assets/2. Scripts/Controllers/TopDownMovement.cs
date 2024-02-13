@@ -8,10 +8,6 @@ public class TopDownMovement : MonoBehaviour
 
     void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-
-        transform.position += new Vector3(x, y).normalized * speed * Time.deltaTime;
-        Debug.Log($"{new Vector2(x, y).normalized}");
+        transform.position += new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed * Time.deltaTime;
     }
 }
