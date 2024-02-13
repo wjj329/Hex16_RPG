@@ -1128,9 +1128,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1757595204}
-  - component: {fileID: 1757595203}
   - component: {fileID: 1757595205}
+  - component: {fileID: 1757595203}
   - component: {fileID: 1757595206}
+  - component: {fileID: 1757595207}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1210,6 +1211,19 @@ MonoBehaviour:
   armRenderer: {fileID: 975713970}
   armPivot: {fileID: 768172125}
   characterRenderer: {fileID: 1957535634}
+--- !u!114 &1757595207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757595202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d92b3cf8d54cc4095fba28b1fbe3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpawnPosition: {fileID: 0}
 --- !u!1 &1957535632
 GameObject:
   m_ObjectHideFlags: 0
