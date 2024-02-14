@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     private CharacterController _contoller; // CharacterController참조
 
     [SerializeField] private Transform BulletSpawnPosition; // 탄환 스폰 위치 지정용 (유니티)
+    
     public GameObject BulletPrefab; // 탄환 프리팹 지정용 (유니티)
 
     private Vector2 _aimDirection = Vector2.right; // 기본 조준 방향
@@ -19,7 +20,7 @@ public class Shooting : MonoBehaviour
 
     void Start()
     {
-        _contoller.OnAttackEvent += OnShoot; // OnAttackEvent에 OnShoot 메소드 연결
+        //_contoller.OnAttackEvent += OnShoot; // OnAttackEvent에 OnShoot 메소드 연결
         _contoller.OnLookEvent += OnAim; // OnLookEvent 이벤트에 OnAim 메소드 연결
     }
 

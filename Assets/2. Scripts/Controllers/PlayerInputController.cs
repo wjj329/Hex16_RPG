@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 public class PlayerInputController : CharacterController
 {
     private Camera _camera;
-    private void Awake()
+    protected override void Awake()
     {
-        _camera = Camera.main; 
-        // 메인 카메라 참조, 스크린 좌표 -> 월드 좌표 변환용
+        base.Awake(); 
+        _camera = Camera.main; // 메인 카메라 참조
     }
 
     public void OnMove(InputValue value) // 플레이어 움직임 입력

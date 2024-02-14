@@ -6,13 +6,16 @@ public class Movement : MonoBehaviour
 {
     private CharacterController _controller;
     private Rigidbody2D _rigidbody;
+    private CharacterStatsHandler _stats;
 
     private Vector2 _movementDirection = Vector2.zero; /// 현재 움직임 방향
+    
 
 
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
+        _stats = GetComponent<CharacterStatsHandler>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -37,7 +40,7 @@ public class Movement : MonoBehaviour
     private void ApplyMovment(Vector2 direction)
     {
         // 이동속도 설정
-        direction *= 5; 
+        direction *= _stats.CurrentStats.speed;
 
         _rigidbody.velocity = direction; 
         // Rigidbody의 속도를 설정하여 움직임을 적용
