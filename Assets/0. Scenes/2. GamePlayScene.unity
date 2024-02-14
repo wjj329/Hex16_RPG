@@ -1150,7 +1150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 284752523}
   - component: {fileID: 284752524}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Map02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1335,7 +1335,7 @@ GameObject:
   - component: {fileID: 317378180}
   - component: {fileID: 317378182}
   - component: {fileID: 317378181}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3815,7 +3815,7 @@ GameObject:
   - component: {fileID: 413326846}
   - component: {fileID: 413326845}
   - component: {fileID: 413326844}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4852,7 +4852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472489002}
   - component: {fileID: 472489003}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Map01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5997,7 +5997,7 @@ GameObject:
   - component: {fileID: 686138618}
   - component: {fileID: 686138617}
   - component: {fileID: 686138616}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collision01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8285,7 +8285,7 @@ GameObject:
   - component: {fileID: 840413959}
   - component: {fileID: 840413958}
   - component: {fileID: 840413957}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collision02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12293,7 +12293,7 @@ GameObject:
   - component: {fileID: 928842684}
   - component: {fileID: 928842686}
   - component: {fileID: 928842685}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ForeDesign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13326,7 +13326,7 @@ GameObject:
   - component: {fileID: 1158758402}
   - component: {fileID: 1158758404}
   - component: {fileID: 1158758403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackDesign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13843,7 +13843,7 @@ GameObject:
   - component: {fileID: 1183300836}
   - component: {fileID: 1183300835}
   - component: {fileID: 1183300834}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16617,7 +16617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1381584027}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RandMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17209,7 +17209,7 @@ GameObject:
   - component: {fileID: 1629268808}
   - component: {fileID: 1629268810}
   - component: {fileID: 1629268809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ForeDesign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21016,7 +21016,7 @@ GameObject:
   - component: {fileID: 1801665467}
   - component: {fileID: 1801665469}
   - component: {fileID: 1801665468}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36428,7 +36428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1937696217}
   - component: {fileID: 1937696218}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Map03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36633,7 +36633,7 @@ GameObject:
   - component: {fileID: 1991847406}
   - component: {fileID: 1991847408}
   - component: {fileID: 1991847407}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58070,7 +58070,7 @@ GameObject:
   - component: {fileID: 2000432743}
   - component: {fileID: 2000432742}
   - component: {fileID: 2000432741}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collision2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61358,7 +61358,7 @@ GameObject:
   - component: {fileID: 2033784419}
   - component: {fileID: 2033784421}
   - component: {fileID: 2033784420}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackDesign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63226,7 +63226,7 @@ GameObject:
   - component: {fileID: 2037266329}
   - component: {fileID: 2037266331}
   - component: {fileID: 2037266330}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ForeDesign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66963,7 +66963,7 @@ GameObject:
   - component: {fileID: 2100976969}
   - component: {fileID: 2100976971}
   - component: {fileID: 2100976970}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackDesign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
