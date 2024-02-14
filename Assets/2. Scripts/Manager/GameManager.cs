@@ -44,14 +44,13 @@ public class GameManager : MonoBehaviour
     
     }
 
-
+    private bool Startloof = true;
 
     IEnumerator StartNextWave()
     {
-        while (true)
+        while (Startloof)
         {
-            if(currentSpawnCount == 0)
-            {
+
                 yield return new WaitForSeconds(2f);
 
                 if(currentWaveIndex % 10 == 0)
@@ -83,14 +82,14 @@ public class GameManager : MonoBehaviour
                         yield return new WaitForSeconds(spawnInterval);
                     }
                 }
-
                 currentWaveIndex++;
-
-            }
 
 
             yield return null;
+
         }
+        yield break;
+
     }
 
 

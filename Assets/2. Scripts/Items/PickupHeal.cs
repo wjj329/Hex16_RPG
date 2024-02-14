@@ -5,12 +5,13 @@ using UnityEngine;
 public class PickupHeal : PickupItem
 {
     [SerializeField] int healValue = 10;
-    //private HealthSystem healthSystem;
+    private HealthSystem _healthSystem;
 
     protected override void OnPickedUp(GameObject receiver)
     {
-        //_healthSystem = receiver.GetComponent<HealthSystem>();
-        //_healthSystem.ChangeHealth(healValue);
+        Debug.Log(receiver);
+        _healthSystem = receiver.GetComponent<HealthSystem>();
+        _healthSystem.ChangeHealth(healValue);
     }
 
 }

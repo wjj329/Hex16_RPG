@@ -216,7 +216,8 @@ GameObject:
   - component: {fileID: 7634717}
   - component: {fileID: 7634718}
   - component: {fileID: 7634719}
-  m_Layer: 0
+  - component: {fileID: 7634720}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -413,6 +414,19 @@ MonoBehaviour:
     speed: 5
     attackSO: {fileID: 11400000, guid: 0a8deb7cf4efe18488a2a9dd2c64d519, type: 2}
   statsModifiers: []
+--- !u!114 &7634720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7634709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16de2f0fd20646441bb5f81f79775545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
 --- !u!1 &35599048
 GameObject:
   m_ObjectHideFlags: 0
