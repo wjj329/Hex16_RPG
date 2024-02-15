@@ -57,10 +57,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator StartNextWave()
     {
-        while (true)
+        while (Startloof)
         {
-            if (currentSpawnCount == 0)
-            {
+
                 UpdateWaveUI();
                 yield return new WaitForSeconds(2f);
 
@@ -100,7 +99,7 @@ public class GameManager : MonoBehaviour
                 }
 
                 currentWaveIndex++;
-            }
+            
 
             yield return null;
         }
