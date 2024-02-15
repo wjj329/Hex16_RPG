@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Transform Player { get; private set; }
     [SerializeField] private string playerTag = "Player";
-
-    public static float time; //Å×½ºÆ®
+    private HealthSystem playerHealthSystem;
+    
 
     [SerializeField] private int currentWaveIndex = 0;
     private int currentSpawnCount = 0;
@@ -16,13 +17,13 @@ public class GameManager : MonoBehaviour
     private int waveSpawnPosCount = 0;
 
     public float spawnInterval = .5f;
-    //public List<GameObject> enemyPrefabs = new List<GameObject>();
+    public List<GameObject> MonstersPrefabs = new List<GameObject>();
 
+    [SerializeField] private Slider hpGaugeSlider;
     [SerializeField] private Transform spawnPositionsRoot;
     private List<Transform> spawnPositions = new List<Transform>();
     public List<GameObject> rewards = new List<GameObject>();
-    public List<Item> itemList = new List<Item>();
-    // Start is called before the first frame update
+
 
 
     private void Awake()
@@ -43,25 +44,26 @@ public class GameManager : MonoBehaviour
         StartCoroutine("StartNextWave");
     }
 
-    private void Update()
-    {
-    
-    }
+    //private void Update()
+    //{
+
+    //}
+
+
 
     private bool Startloof = true;
 
-
-
-
-
     IEnumerator StartNextWave()
     {
+
+
         while (Startloof)
         {
 
+ 
                 yield return new WaitForSeconds(2f);
 
-                if(currentWaveIndex % 10 == 0)
+                if (currentWaveIndex % 10 == 0)
                 {
                     waveSpawnPosCount = waveSpawnPosCount + 1 > spawnPositions.Count ? waveSpawnPosCount : waveSpawnPosCount + 1;
                     waveSpawnCount = 0;
@@ -77,26 +79,28 @@ public class GameManager : MonoBehaviour
                     waveSpawnCount += 1;
                 }
 
-                for(int i = 0; i < waveSpawnPosCount;i++)
+                for (int i = 0; i < waveSpawnPosCount; i++)
                 {
                     int posIdx = Random.Range(0, spawnPositions.Count);
-                    for(int j = 0; j < waveSpawnCount; j++)
+                    for (int j = 0; j < waveSpawnCount; j++)
                     {
-                        //int prefabIdx = Random.Range(0, enemyPrefabs.Count);
-                        //GameObject enemy = Instantiate(enemyPrefabs[prefabIdx], spawnPositions[posIdx].position, Quaternion.identity);
-                        //enemy.GetComponent<HealthSystem>().OnDeath += OnEnemyDeath;
-                        //enemy.GetComponent<CharacterStatsHandler>
+                        int prefabIdx = Random.Range(0, MonstersPrefabs.Count);
+                        GameObject monster = Instantiate(MonstersPrefabs[prefabIdx], spawnPositions[posIdx].position, Quaternion.identity);
+                        monster.GetComponent<HealthSystem>().OnDeath += OnEnemyDeath;
+                        //monster.GetComponent<CharacterStatsHandler>
                         currentSpawnCount++;
                         yield return new WaitForSeconds(spawnInterval);
                     }
                 }
-                currentWaveIndex++;
+
+            
+             currentWaveIndex++;
 
 
             yield return null;
 
         }
-        yield break;
+
 
     }
     private void OnEnemyDeath()
@@ -109,7 +113,6 @@ public class GameManager : MonoBehaviour
     {
         //waveText.text = (currentWaveIndex + 1).ToString();
     }
-
 
 
 
