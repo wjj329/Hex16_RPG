@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform spawnPositionsRoot;
     private List<Transform> spawnPositions = new List<Transform>();
     public List<GameObject> rewards = new List<GameObject>();
-
+    public List<Item> itemList = new List<Item>();
     // Start is called before the first frame update
 
 
@@ -34,8 +34,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
-
+        itemList.Add(new Item(10001, "체력포션", "체력회복", Item.ItemType.Use));
+        itemList.Add(new Item(10002, "폭발레버", "범위공격", Item.ItemType.Use));
         StartCoroutine("StartNextWave", 0f);
     }
 
@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour
     }
 
     private bool Startloof = true;
+
+
+
+
 
     IEnumerator StartNextWave()
     {
@@ -97,6 +101,11 @@ public class GameManager : MonoBehaviour
     {
         //waveText.text = (currentWaveIndex + 1).ToString();
     }
+
+
+
+
+
 
 
 
