@@ -10,7 +10,7 @@ public class PickupStatModifiers : PickupItem
         CharacterStatsHandler statsHandler = receiver.GetComponent<CharacterStatsHandler>();
         foreach(CharacterStats stat in statsModifier)
         {
-            //statsHandler.AddStatModifier(stat);
+            statsHandler.AddStatModifier(stat);
         }
     }
 

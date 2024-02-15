@@ -116,7 +116,7 @@ Transform:
   m_Children:
   - {fileID: 5964998233412068592}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7997994842411557889
 BoxCollider2D:
@@ -179,5 +179,5 @@ MonoBehaviour:
   canBePickupBy:
     serializedVersion: 2
     m_Bits: 64
-  pickupSound: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: 4b75deb6c9a667146b17c6d767da9f29, type: 3}
   healValue: 10

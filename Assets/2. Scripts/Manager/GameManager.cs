@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private int waveSpawnPosCount = 0;
 
     public float spawnInterval = .5f;
-    public List<GameObject> MonstersPrefabs = new List<GameObject>();
+    public List<GameObject> enemyPrefabs = new List<GameObject>();
 
     [SerializeField] private Slider hpGaugeSlider;
     [SerializeField] private Transform spawnPositionsRoot;
@@ -40,8 +40,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        //UpgradeStatInit();
 
-        StartCoroutine("StartNextWave");
+        StartCoroutine("StartNextWave", 0f);
     }
 
     //private void Update()
@@ -53,15 +54,20 @@ public class GameManager : MonoBehaviour
 
     private bool Startloof = true;
 
+
+
     IEnumerator StartNextWave()
     {
-
-
         while (Startloof)
         {
 
- 
+                UpdateWaveUI();
                 yield return new WaitForSeconds(2f);
+
+                if (currentWaveIndex % 20 == 0)
+                {
+                    //RandomUpgrade();
+                }
 
                 if (currentWaveIndex % 10 == 0)
                 {
@@ -84,28 +90,31 @@ public class GameManager : MonoBehaviour
                     int posIdx = Random.Range(0, spawnPositions.Count);
                     for (int j = 0; j < waveSpawnCount; j++)
                     {
-                        int prefabIdx = Random.Range(0, MonstersPrefabs.Count);
-                        GameObject monster = Instantiate(MonstersPrefabs[prefabIdx], spawnPositions[posIdx].position, Quaternion.identity);
-                        monster.GetComponent<HealthSystem>().OnDeath += OnEnemyDeath;
-                        //monster.GetComponent<CharacterStatsHandler>
+                        int prefabIdx = Random.Range(0, enemyPrefabs.Count);
+                        GameObject enemy = Instantiate(enemyPrefabs[prefabIdx], spawnPositions[posIdx].position, Quaternion.identity);
+                        enemy.GetComponent<HealthSystem>().OnDeath += OnEnemyDeath;
+
                         currentSpawnCount++;
                         yield return new WaitForSeconds(spawnInterval);
                     }
                 }
 
+                currentWaveIndex++;
             
-             currentWaveIndex++;
-
 
             yield return null;
-
         }
-
-
     }
+
     private void OnEnemyDeath()
     {
         currentSpawnCount--;
+    }
+
+    private void GameOver()
+    {
+        //gameOver�� ��ȯ
+        StopAllCoroutines();
     }
 
 
@@ -113,10 +122,6 @@ public class GameManager : MonoBehaviour
     {
         //waveText.text = (currentWaveIndex + 1).ToString();
     }
-
-
-
-
 
 
 

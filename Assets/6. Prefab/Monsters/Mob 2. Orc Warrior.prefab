@@ -181,7 +181,7 @@ Transform:
   - {fileID: 4617321821365122654}
   - {fileID: 6052531000698317313}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4866522087757271241
 BoxCollider2D:
@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPosition: {fileID: 6998982257258688131}
+  shootingClip: {fileID: 8300000, guid: c9482ab51510c364ab86b96fb867e814, type: 3}
 --- !u!114 &1051873894662586359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthChangeDelay: 0.1
+  damageClip: {fileID: 8300000, guid: a857c4df510377c4fa244ddbb57e5c44, type: 3}
 --- !u!114 &8035215158683425511
 MonoBehaviour:
   m_ObjectHideFlags: 0
