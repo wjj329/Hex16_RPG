@@ -23,6 +23,7 @@ public class CommonAnimationController : CommonAnimations
     // Start is called before the first frame update
     void Start()
     {
+
         controller.OnAttackEvent += Attacking; // 공격 이벤트 연결
         controller.OnMoveEvent += Move; // 이동 이벤트 연결
 
@@ -36,8 +37,9 @@ public class CommonAnimationController : CommonAnimations
 
     private void Move(Vector2 obj)
     {
-        animator.SetBool(IsWalking, obj.magnitude > .5f); 
+        animator.SetBool(IsWalking, obj.magnitude > .5f);
         // 이동속도 적용 되면 이동 애니메이션 재생
+        Debug.Log("walking");
     }
 
     private void Attacking(AttackSO obj)
