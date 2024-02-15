@@ -10,6 +10,10 @@ public class ProjectileManager : MonoBehaviour
     public static ProjectileManager instance;
 
     [SerializeField] private GameObject testObj; // 투사체 프리팹 (유니티)
+    [SerializeField] private GameObject testObj2;
+    [SerializeField] private GameObject testObj3;
+    [SerializeField] private GameObject testObj4;
+    [SerializeField] private GameObject testObj5;
 
     private ObjectPool objectPool; // 투사체 재사용(오브젝트 풀) 컴퍼넌트 참조
 
