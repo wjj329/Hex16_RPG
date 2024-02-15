@@ -63,10 +63,12 @@ public class HealthSystem : MonoBehaviour
         if (change > 0)
         {
             OnHeal?.Invoke(); // 체력이 회복되면 OnHeal 이벤트
+            
         }
         else
         {
             OnDamage?.Invoke(); // 체력이 감소하면 OnDamage 이벤트
+            
         }
 
         if (CurrentHealth <= 0f)

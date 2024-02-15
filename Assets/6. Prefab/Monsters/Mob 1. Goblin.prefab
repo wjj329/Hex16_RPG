@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 5623400014640604585}
   - component: {fileID: 4929707624004145766}
   - component: {fileID: 1161996611314733390}
+  - component: {fileID: 6898277320668850158}
+  - component: {fileID: 822552395991186353}
+  - component: {fileID: 5755308271071760035}
   m_Layer: 0
   m_Name: Mob 1. Goblin
   m_TagString: Monster
@@ -32,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 8753455670941529515}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4929707624004145766
 BoxCollider2D:
@@ -106,6 +109,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6898277320668850158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208613951915904625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3599a22b129ce8418e1210884ff5e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStats:
+    statsChangeType: 0
+    maxHealth: 3
+    speed: 2
+    attackSO: {fileID: 0}
+  statsModifiers: []
+--- !u!114 &822552395991186353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208613951915904625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabcca1514e82dd428b69909da3aad97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5755308271071760035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208613951915904625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4038563b37bf7f04db199f69f22a421f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followRange: 20
+  targetTag: Player
+  characterRenderer: {fileID: 4008854630764707576}
 --- !u!1 &5920841628109767073
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +226,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 7becf30dba593d4419bf87c9741b8a32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
