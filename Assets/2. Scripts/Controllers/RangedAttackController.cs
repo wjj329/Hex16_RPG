@@ -48,10 +48,38 @@ public class RangedAttackController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 충돌 객체가 지정 레이어에 속하면 파괴
+        // 충돌 객체가 지정 레이어(맵: level)와 충돌했다면
         if (levelCollisionLayer.value == (levelCollisionLayer.value | (1 << collision.gameObject.layer)))
         {
+            //투사체를 파괴
             DestroyProjectile(collision.ClosestPoint(transform.position) - _direction * .2f, fxOnDestory);
+        }
+
+        // 투사체가 공격 대상 레이어(몬스터)와 충돌했다면
+        else if (_attackData.target.value == (_attackData.target.value | (1 << collision.gameObject.layer)))
+        {
+
+            // 충돌한 오브젝트에서 HealthSystem 컴포넌트 호출
+            HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
+            if (healthSystem != null)
+            {
+                //  공격력만큼 대상 체력 감소
+                healthSystem.ChangeHealth(-_attackData.power);
+
+                // 넉백 있으면 넉백 적용
+                if (_attackData.isOnKnockback)
+                {
+                    // 충돌 오브젝트에서 Movement 컴포넌트 호출
+                    Movement movement = collision.GetComponent<Movement>();
+                    if (movement != null)
+                    {
+                        // 넉백 적용
+                        movement.ApplyKnockback(transform, _attackData.knockbackPower, _attackData.knockbackTime);
+                    }
+                }
+            }
+            // 투사체 파괴
+            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestory);
         }
     }
 
