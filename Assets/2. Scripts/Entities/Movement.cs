@@ -40,9 +40,9 @@ public class Movement : MonoBehaviour
     private void ApplyMovment(Vector2 direction)
     {
         // 이동속도 설정
-        direction *= _stats.CurrentStats.speed;
+        direction = direction * _stats.CurrentStats.speed;
 
-        _rigidbody.velocity = direction; 
+        _rigidbody.velocity = direction;
         // Rigidbody의 속도를 설정하여 움직임을 적용
     }
 }

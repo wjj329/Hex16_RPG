@@ -28,10 +28,11 @@ public class CharacterController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if (Stats.CurrentStats.attackSO == null) return;
+        if (Stats.CurrentStats.attackSO == null)
+            return;
         // 공격 관련 데이터 없으면 예외처리
 
-        if (_timeSinceLastAttack <= Stats.CurrentStats.attackSO.delay) 
+        if (_timeSinceLastAttack <= Stats.CurrentStats.attackSO.delay)
         // 마지막 공격시간이 공격 딜레이 시간 보다 작으면
         {
             _timeSinceLastAttack += Time.deltaTime; // 마지막 공격 시간 업데이트
