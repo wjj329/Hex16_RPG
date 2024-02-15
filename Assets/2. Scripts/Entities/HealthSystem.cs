@@ -9,6 +9,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private float healthChangeDelay = .5f; //  체력 변경 지연 시간
     private CharacterStatsHandler _statsHandler;
     private float _timeSinceLastChange = float.MaxValue; // 마지막 체력 변경 이후 시간
+   
 
     // 체력 변환 이벤트들
     public event Action OnDamage;
@@ -73,6 +74,7 @@ public class HealthSystem : MonoBehaviour
 
             if (damageClip)
                 SoundManager.PlayClip(damageClip);
+
         }
 
         if (CurrentHealth <= 0f)
@@ -87,4 +89,5 @@ public class HealthSystem : MonoBehaviour
     {
         OnDeath?.Invoke(); // OnDeath 이벤트 호출
     }
+
 }
