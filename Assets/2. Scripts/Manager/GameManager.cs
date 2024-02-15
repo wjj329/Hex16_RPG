@@ -41,8 +41,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //UpgradeStatInit();
-        itemList.Add(new Item(10001, "ü������", "ü��ȸ��", Item.ItemType.Use));
-        itemList.Add(new Item(10002, "���߷���", "��������", Item.ItemType.Use));
         StartCoroutine("StartNextWave", 0f);
     }
 

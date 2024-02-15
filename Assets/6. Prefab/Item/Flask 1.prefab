@@ -179,7 +179,7 @@ MonoBehaviour:
   canBePickupBy:
     serializedVersion: 2
     m_Bits: 64
-  pickupSound: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: 4b75deb6c9a667146b17c6d767da9f29, type: 3}
   statsModifier:
   - statsChangeType: 0
     maxHealth: 0
