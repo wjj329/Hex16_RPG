@@ -13,6 +13,8 @@ public class Shooting : MonoBehaviour
 
     private Vector2 _aimDirection = Vector2.right; // 기본 조준 방향
 
+    public AudioClip shootingClip;// 슈팅 사운드
+
     private void Awake()
     {
         _contoller = GetComponent<CharacterController>(); // CharacterController 컴포넌트를 가져와 참조
@@ -69,6 +71,10 @@ public class Shooting : MonoBehaviour
                 RotateVector2(_aimDirection, angle),
                 rangedAttackData
                 );
+
+        if (shootingClip) // 슈팅 사운드 클립
+            SoundManager.PlayClip(shootingClip);
+
     }
     private static Vector2 RotateVector2(Vector2 v, float degree)
     {
