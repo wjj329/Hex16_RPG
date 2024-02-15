@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Transform Player { get; private set; }
     [SerializeField] private string playerTag = "Player";
-
-    public static float time; //Å×½ºÆ®
+    private HealthSystem playerHealthSystem;
+    
 
     [SerializeField] private int currentWaveIndex = 0;
     private int currentSpawnCount = 0;
@@ -18,11 +19,11 @@ public class GameManager : MonoBehaviour
     public float spawnInterval = .5f;
     public List<GameObject> enemyPrefabs = new List<GameObject>();
 
+    [SerializeField] private Slider hpGaugeSlider;
     [SerializeField] private Transform spawnPositionsRoot;
     private List<Transform> spawnPositions = new List<Transform>();
     public List<GameObject> rewards = new List<GameObject>();
-    public List<Item> itemList = new List<Item>();
-    // Start is called before the first frame update
+
 
 
     private void Awake()
@@ -40,15 +41,17 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //UpgradeStatInit();
-        itemList.Add(new Item(10001, "Ã¼·ÂÆ÷¼Ç", "Ã¼·ÂÈ¸º¹", Item.ItemType.Use));
-        itemList.Add(new Item(10002, "Æø¹ß·¹¹ö", "¹üÀ§°ø°Ý", Item.ItemType.Use));
+        itemList.Add(new Item(10001, "Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "Ã¼ï¿½ï¿½È¸ï¿½ï¿½", Item.ItemType.Use));
+        itemList.Add(new Item(10002, "ï¿½ï¿½ï¿½ß·ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", Item.ItemType.Use));
         StartCoroutine("StartNextWave", 0f);
     }
 
-    private void Update()
-    {
-    
-    }
+    //private void Update()
+    //{
+
+    //}
+
+
 
     private bool Startloof = true;
 
@@ -84,7 +87,6 @@ public class GameManager : MonoBehaviour
                     waveSpawnCount += 1;
                 }
 
-
                 for (int i = 0; i < waveSpawnPosCount; i++)
                 {
                     int posIdx = Random.Range(0, spawnPositions.Count);
@@ -113,7 +115,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        //gameOver¾À ÀüÈ¯
+        //gameOverï¿½ï¿½ ï¿½ï¿½È¯
         StopAllCoroutines();
     }
 

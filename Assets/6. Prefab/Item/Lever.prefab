@@ -95,7 +95,7 @@ MonoBehaviour:
   canBePickupBy:
     serializedVersion: 2
     m_Bits: 64
-  pickupSound: {fileID: 8300000, guid: d0666dbab42affc44bcd8def50eb69a5, type: 3}
+  pickupSound: {fileID: 0}
   targetTag: Monster
 --- !u!1 &2301088251807683584
 GameObject:
@@ -169,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: e7495fb6718adb341b157dc6eba0be25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
