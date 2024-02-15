@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickupLever : PickupItem
 {
     public string targetTag = "Monster";
-
 
     protected override void OnPickedUp(GameObject receiver)
     {
@@ -16,9 +16,12 @@ public class PickupLever : PickupItem
 
             if (obj.CompareTag(targetTag))
             {
+
                 Destroy(obj);
             }
         }
     }
+
+
 
 }

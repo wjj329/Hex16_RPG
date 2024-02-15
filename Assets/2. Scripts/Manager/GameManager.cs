@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //UpgradeStatInit();
-
         StartCoroutine("StartNextWave", 0f);
     }
 

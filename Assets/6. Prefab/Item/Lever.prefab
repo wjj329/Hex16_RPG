@@ -95,7 +95,7 @@ MonoBehaviour:
   canBePickupBy:
     serializedVersion: 2
     m_Bits: 64
-  pickupSound: {fileID: 0}
+  pickupSound: {fileID: 8300000, guid: d0666dbab42affc44bcd8def50eb69a5, type: 3}
   targetTag: Monster
 --- !u!1 &2301088251807683584
 GameObject:
