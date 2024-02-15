@@ -39,7 +39,6 @@ public class CommonAnimationController : CommonAnimations
     {
         animator.SetBool(IsWalking, obj.magnitude > .5f);
         // 이동속도 적용 되면 이동 애니메이션 재생
-        Debug.Log("walking");
     }
 
     private void Attacking(AttackSO obj)
