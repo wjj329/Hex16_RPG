@@ -72,7 +72,7 @@ public class HealthSystem : MonoBehaviour
             OnDamage?.Invoke(); // 체력이 감소하면 OnDamage 이벤트
 
             if (damageClip)
-                SoundManager.PlayClip(damageClip); // 데미지 사운드 클립
+                SoundManager.PlayClip(damageClip);
         }
 
         if (CurrentHealth <= 0f)

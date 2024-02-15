@@ -72,7 +72,7 @@ public class Shooting : MonoBehaviour
                 rangedAttackData
                 );
 
-        if (shootingClip) // 슈팅 사운드 클립
+        if (shootingClip)
             SoundManager.PlayClip(shootingClip);
 
     }
