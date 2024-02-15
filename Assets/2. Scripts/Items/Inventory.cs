@@ -35,6 +35,8 @@ public class Inventory : MonoBehaviour
         inventoryItemList = new List<Item>();
         inventoryTabList = new List<Item>();
         slots = tf.GetComponentsInChildren<InventorySlot>();
+        inventoryItemList.Add(new Item(10001, "체력포션", "체력회복", Item.ItemType.Use));
+        inventoryItemList.Add(new Item(10002, "폭발레버", "범위공격", Item.ItemType.Use));
     }
 
     public void RemoveSlot()
@@ -178,6 +180,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(!stopKeyInput)
         {
             if(Input.GetKeyDown(KeyCode.I))
@@ -253,65 +256,70 @@ public class Inventory : MonoBehaviour
 
                 else if(itemActivated)
                 {
-                    if(Input.GetKeyDown(KeyCode.DownArrow))
+                    if(inventoryTabList.Count > 0)
                     {
-                        if(selectedItem < inventoryTabList.Count -2)
+                        if (Input.GetKeyDown(KeyCode.DownArrow))
                         {
-                            selectedItem+= 2;
-                        }
-                        else
-                        {
-                            selectedItem %= 2;
-                            SelectedItem();
-                        }
+                            if (selectedItem < inventoryTabList.Count - 2)
+                            {
+                                selectedItem += 2;
+                            }
+                            else
+                            {
+                                selectedItem %= 2;
+                                SelectedItem();
+                            }
 
-                    }
-                    else if (Input.GetKeyDown(KeyCode.UpArrow))
-                    {
-                        if (selectedItem > 1)
-                        {
-                            selectedItem -= 2;
                         }
-                        else
+                        else if (Input.GetKeyDown(KeyCode.UpArrow))
                         {
-                            selectedItem %= inventoryTabList.Count - 2 - selectedItem;
-                            SelectedItem();
+                            if (selectedItem > 1)
+                            {
+                                selectedItem -= 2;
+                            }
+                            else
+                            {
+                                selectedItem %= inventoryTabList.Count - 1 - selectedItem;
+                                SelectedItem();
+                            }
                         }
-                    }
-                    else if (Input.GetKeyDown(KeyCode.RightArrow))
-                    {
-                        if (selectedItem < inventoryTabList.Count - 2)
+                        else if (Input.GetKeyDown(KeyCode.RightArrow))
                         {
-                            selectedItem ++;
-                        }
-                        else
-                        {
-                            selectedItem = 0;
-                            SelectedItem();
-                        }
+                            if (selectedItem < inventoryTabList.Count - 1)
+                            {
+                                selectedItem++;
+                            }
+                            else
+                            {
+                                selectedItem = 0;
+                                SelectedItem();
+                            }
 
-                    }
-                    else if (Input.GetKeyDown(KeyCode.LeftArrow))
-                    {
-                        if (selectedItem > 0)
-                        {
-                            selectedItem--;
                         }
-                        else
+                        else if (Input.GetKeyDown(KeyCode.LeftArrow))
                         {
-                            selectedItem = inventoryTabList.Count - 2;
-                            SelectedItem();
+                            if (selectedItem > 0)
+                            {
+                                selectedItem--;
+                            }
+                            else
+                            {
+                                selectedItem = inventoryTabList.Count - 1;
+                                SelectedItem();
+                            }
+                        }
+                        else if (Input.GetKeyDown(KeyCode.Z) && !preventExec)
+                        {
+                            if (selectedTab == 0) //소모품
+                            {
+                                stopKeyInput = true;
+                                // 선택지 호출
+                            }
                         }
                     }
-                    else if (Input.GetKeyDown(KeyCode.Z) && !preventExec)
-                    {
-                        if(selectedTab == 0) //소모품
-                        {
-                            stopKeyInput = true;
-                            // 선택지 호출
-                        }
-                    }
-                    else if (Input.GetKeyDown(KeyCode.X))
+
+
+                    if (Input.GetKeyDown(KeyCode.X))
                     {
                         StopAllCoroutines();
                         itemActivated = false;

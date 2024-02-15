@@ -39,8 +39,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        itemList.Add(new Item(10001, "체력포션", "체력회복", Item.ItemType.Use));
-        itemList.Add(new Item(10002, "폭발레버", "범위공격", Item.ItemType.Use));
         StartCoroutine("StartNextWave", 0f);
     }
 
@@ -106,13 +104,6 @@ public class GameManager : MonoBehaviour
     {
         //waveText.text = (currentWaveIndex + 1).ToString();
     }
-
-
-
-
-
-
-
 
     void CreateReward()
     {
