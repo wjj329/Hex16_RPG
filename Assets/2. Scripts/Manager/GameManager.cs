@@ -41,8 +41,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //UpgradeStatInit();
-        itemList.Add(new Item(10001, "ü������", "ü��ȸ��", Item.ItemType.Use));
-        itemList.Add(new Item(10002, "���߷���", "��������", Item.ItemType.Use));
+
         StartCoroutine("StartNextWave", 0f);
     }
 
@@ -59,10 +58,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator StartNextWave()
     {
-        while (true)
+        while (Startloof)
         {
-            if (currentSpawnCount == 0)
-            {
+
                 UpdateWaveUI();
                 yield return new WaitForSeconds(2f);
 
@@ -102,7 +100,7 @@ public class GameManager : MonoBehaviour
                 }
 
                 currentWaveIndex++;
-            }
+            
 
             yield return null;
         }
