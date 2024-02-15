@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+    public Transform Player { get; private set; }
+    [SerializeField] private string playerTag = "Player";
+
     public static float time; //Å×½ºÆ®
 
     [SerializeField] private int currentWaveIndex = 0;
@@ -23,8 +27,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-
-       for(int i = 0; i < spawnPositionsRoot.childCount; i++)
+        instance = this;
+        Player = GameObject.FindGameObjectWithTag(playerTag).transform;
+        for (int i = 0; i < spawnPositionsRoot.childCount; i++)
         {
             spawnPositions.Add(spawnPositionsRoot.GetChild(i));
         }
