@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Mob_Orc_Warrior
   m_EditorClassIdentifier: 
   size: 0.6
-  delay: 2.5
-  power: 5
+  delay: 3
+  power: 2
   speed: 6
   target:
     serializedVersion: 2
@@ -26,5 +26,5 @@ MonoBehaviour:
   duration: 5
   spread: 8
   numberofProjectilesPerShot: 1
-  multipleProjectilesAngel: 7
+  multipleProjectilesAngel: 1
   projectileColor: {r: 1, g: 1, b: 1, a: 1}

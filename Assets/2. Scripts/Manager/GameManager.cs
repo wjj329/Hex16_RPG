@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private int waveSpawnPosCount = 0;
 
     public float spawnInterval = .5f;
-    //public List<GameObject> enemyPrefabs = new List<GameObject>();
+    public List<GameObject> enemyPrefabs = new List<GameObject>();
 
     [SerializeField] private Transform spawnPositionsRoot;
     private List<Transform> spawnPositions = new List<Transform>();
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        //UpgradeStatInit();
         itemList.Add(new Item(10001, "체력포션", "체력회복", Item.ItemType.Use));
         itemList.Add(new Item(10002, "폭발레버", "범위공격", Item.ItemType.Use));
         StartCoroutine("StartNextWave", 0f);
@@ -53,16 +54,21 @@ public class GameManager : MonoBehaviour
 
 
 
-
-
     IEnumerator StartNextWave()
     {
-        while (Startloof)
+        while (true)
         {
-
+            if (currentSpawnCount == 0)
+            {
+                UpdateWaveUI();
                 yield return new WaitForSeconds(2f);
 
-                if(currentWaveIndex % 10 == 0)
+                if (currentWaveIndex % 20 == 0)
+                {
+                    //RandomUpgrade();
+                }
+
+                if (currentWaveIndex % 10 == 0)
                 {
                     waveSpawnPosCount = waveSpawnPosCount + 1 > spawnPositions.Count ? waveSpawnPosCount : waveSpawnPosCount + 1;
                     waveSpawnCount = 0;
@@ -78,27 +84,37 @@ public class GameManager : MonoBehaviour
                     waveSpawnCount += 1;
                 }
 
-                for(int i = 0; i < waveSpawnPosCount;i++)
+
+                for (int i = 0; i < waveSpawnPosCount; i++)
                 {
                     int posIdx = Random.Range(0, spawnPositions.Count);
-                    for(int j = 0; j < waveSpawnCount; j++)
+                    for (int j = 0; j < waveSpawnCount; j++)
                     {
-                        //int prefabIdx = Random.Range(0, enemyPrefabs.Count);
-                        //GameObject enemy = Instantiate(enemyPrefabs[prefabIdx], spawnPositions[posIdx].position, Quaternion.identity);
-                        //enemy.GetComponent<HealthSystem>().OnDeath += OnEnemyDeath;
-                        //enemy.GetComponent<CharacterStatsHandler>
+                        int prefabIdx = Random.Range(0, enemyPrefabs.Count);
+                        GameObject enemy = Instantiate(enemyPrefabs[prefabIdx], spawnPositions[posIdx].position, Quaternion.identity);
+                        enemy.GetComponent<HealthSystem>().OnDeath += OnEnemyDeath;
+
                         currentSpawnCount++;
                         yield return new WaitForSeconds(spawnInterval);
                     }
                 }
-                currentWaveIndex++;
 
+                currentWaveIndex++;
+            }
 
             yield return null;
-
         }
-        yield break;
+    }
 
+    private void OnEnemyDeath()
+    {
+        currentSpawnCount--;
+    }
+
+    private void GameOver()
+    {
+        //gameOver씬 전환
+        StopAllCoroutines();
     }
 
 
@@ -106,11 +122,6 @@ public class GameManager : MonoBehaviour
     {
         //waveText.text = (currentWaveIndex + 1).ToString();
     }
-
-
-
-
-
 
 
 
