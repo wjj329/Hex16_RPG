@@ -8009,14 +8009,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4056127076492723406, guid: 77ce4efa85083ed439965cc715d8ddbb, type: 3}
-      propertyPath: m_Parameters.colorGradient.key0.a
-      value: 0.5176471
-      objectReference: {fileID: 0}
-    - target: {fileID: 4056127076492723406, guid: 77ce4efa85083ed439965cc715d8ddbb, type: 3}
-      propertyPath: m_Parameters.colorGradient.key1.a
-      value: 0.58431375
-      objectReference: {fileID: 0}
     - target: {fileID: 5090995683500755359, guid: 77ce4efa85083ed439965cc715d8ddbb, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -16393,6 +16385,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1199089852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6819673850056387241, guid: 77ce4efa85083ed439965cc715d8ddbb, type: 3}
+  m_PrefabInstance: {fileID: 736894184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1219628075
 GameObject:
   m_ObjectHideFlags: 0
@@ -16546,7 +16543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _impactParticleSystem: {fileID: 0}
-  testObj: {fileID: 6819673850056387241, guid: 77ce4efa85083ed439965cc715d8ddbb, type: 3}
+  testObj: {fileID: 1199089852}
 --- !u!114 &1237153867
 MonoBehaviour:
   m_ObjectHideFlags: 0
