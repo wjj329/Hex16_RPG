@@ -96,7 +96,7 @@
 
 ---
 ### 트러블 슈팅
-[어떤 파트에서 무엇을 구현 했는지 간략하게 설명](https://youtu.be/zX0QQzSH2GY)
+[트러블슈팅 회고](https://youtu.be/zX0QQzSH2GY)
 
 
 
