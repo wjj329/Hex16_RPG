@@ -12,7 +12,9 @@
 
 ![image](https://github.com/wjj329/Hex16_RPG/assets/154484828/25c9c440-c800-423b-9a7e-5d2d262cd9c7)
 
+---
 
+## 역할분담
 
 <details>
   <summary>  조기조 </summary>
@@ -23,6 +25,7 @@
 
 - 인트로씬 / 게임 플레이 씬 / 엔딩 씬 (게임 오버) / 클리어 씬
 - 플레이어 정보창 ( 스탯, 인벤토리 - 아이템 장착 해제 등)
+
 
 
 </details>
