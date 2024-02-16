@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262c446bc0cd21c46bae25c8c29ffa92, type: 3}
   m_Name: GreenRangedAttackData
   m_EditorClassIdentifier: 
-  size: 0.5
-  delay: 1.5
-  power: 3
-  speed: 7
+  size: 0
+  delay: 0
+  power: 0
+  speed: 0
   target:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   isOnKnockback: 0
   knockbackPower: 0
   knockbackTime: 0
   bulletNameTag: 
   duration: 0
   spread: 0
-  numberofProjectilesPerShot: 3
-  multipleProjectilesAngel: 3
+  numberofProjectilesPerShot: 1
+  multipleProjectilesAngel: 1
   projectileColor: {r: 0, g: 0, b: 0, a: 0}

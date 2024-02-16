@@ -22,7 +22,7 @@ MonoBehaviour:
   isOnKnockback: 0
   knockbackPower: 0
   knockbackTime: 0
-  bulletNameTag: 0
+  bulletNameTag: 
   duration: 0
   spread: 0
   numberofProjectilesPerShot: 1
