@@ -24,7 +24,7 @@ public class HealthBar : MonoBehaviour
     {
         if (healthSystem != null)
         {
-            // 체력바 UI의 fillAmount를 현재 체력에 맞게 조정
+            // 체력바 UI의 fillAmount = 현재 체력 / 최대 체력
             healthBarImage.fillAmount = healthSystem.CurrentHealth / healthSystem.MaxHealth;
         }
     }
