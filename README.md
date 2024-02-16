@@ -21,66 +21,14 @@
   
   <!-- 내용 -->
   
-  UI , 씬 , 랜덤 맵
+  UI , 씬 , 랜덤팅
+- [Feat] 내용 추가        
+- [Add] player.cs 추가
+- [Fix] 내용 버그수정
 
-- 인트로씬 / 게임 플레이 씬 / 엔딩 씬 (게임 오버) / 클리어 씬
-- 플레이어 정보창 ( 스탯, 인벤토리 - 아이템 장착 해제 등)
+<br>
 
-
-
-</details>
-
-
-<details>
-  <summary>  이인규 </summary>
-  
-  <!-- 내용 -->
-  
-- 플레이어 ,스탯 ( Scriptabe Objects 사용 ),  캐릭터 조작 등 (이동 공격 스킬 등)
-
-</details>
-
-<details>
-  <summary>  우정진 </summary>
-  
-  <!-- 내용 -->
-  
-- 몬스터 + 몬스터 스폰 + 인공지능(움직임, 공격패턴, 경로탐색)
-- 보스 전투 등
-
-</details>
-
-
-<details>
-  <summary>  박재현 </summary>
-  
-  <!-- 내용 -->
-  
-- 아이템 + 무기 & 소모품 & 오브젝트(투사체 등)
-
-</details>
-
-<details>
-  <summary>  홍용욱 </summary>
-  
-  <!-- 내용 -->
-  
-- 전투 : 피해, 체력관리, 전투 효과 등
-
-</details>
-
-
-
----
-
-## ⭐Commit 규칙
-ex) 
-[Feat] 내용 추가        
-[Add] player.cs 추가
-[Fix] 내용 버그수정
-
-
-해상도 1920 1080
+- 해상도 1920 1080
 22.3.2fa 유니티
 
 
