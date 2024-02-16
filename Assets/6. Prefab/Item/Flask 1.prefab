@@ -183,5 +183,5 @@ MonoBehaviour:
   statsModifier:
   - statsChangeType: 0
     maxHealth: 0
-    speed: 10
+    speed: 5
     attackSO: {fileID: 11400000, guid: 0448f581ad3ac4445a9bd7c611bdb9e7, type: 2}

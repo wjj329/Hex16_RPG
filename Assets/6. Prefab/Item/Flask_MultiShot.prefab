@@ -98,8 +98,8 @@ MonoBehaviour:
   pickupSound: {fileID: 8300000, guid: 4b75deb6c9a667146b17c6d767da9f29, type: 3}
   statsModifier:
   - statsChangeType: 0
-    maxHealth: 10
-    speed: 0
+    maxHealth: 5
+    speed: 3
     attackSO: {fileID: 11400000, guid: 9fde98276ec49394d94e62745daa0e02, type: 2}
 --- !u!1 &8014983443941298700
 GameObject:
