@@ -74,9 +74,9 @@
 ---
 
 ## ⭐Commit 규칙
-
-[Feat] 내용 추가           ex) [Add] player.cs 추가
-
+ex) 
+[Feat] 내용 추가        
+[Add] player.cs 추가
 [Fix] 내용 버그수정
 
 
