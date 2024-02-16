@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -23,7 +24,9 @@ public class GameManager : MonoBehaviour
     public float spawnInterval = .5f;
     public List<GameObject> enemyPrefabs = new List<GameObject>();
 
+    [SerializeField] private TextMeshProUGUI waveText;
     [SerializeField] private Slider hpGaugeSlider;
+    [SerializeField] private GameObject gameOverUI;
     [SerializeField] private Transform spawnPositionsRoot;
     private List<Transform> spawnPositions = new List<Transform>();
     public List<GameObject> rewards = new List<GameObject>();
@@ -34,6 +37,12 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         Player = GameObject.FindGameObjectWithTag(playerTag).transform;
+        playerHealthSystem = Player.GetComponent<HealthSystem>();
+        playerHealthSystem.OnDamage += UpdateHealthUI;
+        playerHealthSystem.OnHeal += UpdateHealthUI;
+        playerHealthSystem.OnDeath += GameOver;
+
+       //gameOverUI.SetActive(false);
 
         bigDemon = GameObject.Find("Mob 8. BigDemon");
         if (bigDemon != null)
@@ -137,9 +146,15 @@ public class GameManager : MonoBehaviour
         currentSpawnCount--;
     }
 
+
+    private void UpdateHealthUI()
+    {
+        hpGaugeSlider.value = playerHealthSystem.CurrentHealth / playerHealthSystem.MaxHealth;
+    }
+
     private void GameOver()
     {
-        //gameOver�� ��ȯ
+        gameOverUI.SetActive(true);
         StopAllCoroutines();
     }
 
@@ -148,6 +163,9 @@ public class GameManager : MonoBehaviour
     {
         //waveText.text = (currentWaveIndex + 1).ToString();
     }
+
+
+
 
 
 
