@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     {
         //UpgradeStatInit();
         StartCoroutine("StartNextWave", 0f);
-        StartCoroutine(ActivateBigDemonAfterDelay(45f)); // 게임 시작후 45초 뒤 보스 등장
+        StartCoroutine(ActivateBigDemonAfterDelay(50f)); // 게임 시작후 50초 뒤 보스 등장
     }
 
     private void Update()
