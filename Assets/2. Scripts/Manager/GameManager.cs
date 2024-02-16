@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject bigDemon; // BigDemon 저장 변수
+
+
     public static GameManager instance;
     public Transform Player { get; private set; }
     [SerializeField] private string playerTag = "Player";
@@ -24,12 +28,20 @@ public class GameManager : MonoBehaviour
     private List<Transform> spawnPositions = new List<Transform>();
     public List<GameObject> rewards = new List<GameObject>();
 
-
+    private float spawnTimer = 0f;
 
     private void Awake()
     {
         instance = this;
         Player = GameObject.FindGameObjectWithTag(playerTag).transform;
+
+        bigDemon = GameObject.Find("Mob 8. BigDemon");
+        if (bigDemon != null)
+        {
+            bigDemon.SetActive(false);
+            bigDemon.GetComponent<HealthSystem>().OnDeath += OnBigDemonDeath;
+        }
+
         for (int i = 0; i < spawnPositionsRoot.childCount; i++)
         {
             spawnPositions.Add(spawnPositionsRoot.GetChild(i));
@@ -42,12 +54,18 @@ public class GameManager : MonoBehaviour
     {
         //UpgradeStatInit();
         StartCoroutine("StartNextWave", 0f);
+        StartCoroutine(ActivateBigDemonAfterDelay(5f)); // 게임 시작후 45초 뒤 보스 등장
     }
 
-    //private void Update()
-    //{
+    private void Update()
+    {
+    }
 
-    //}
+    private void OnBigDemonDeath()
+    {
+        SceneManager.LoadScene("3. GameClearScene"); // GameClearScene 씬 로드
+    }
+
 
 
 
@@ -103,6 +121,15 @@ public class GameManager : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    IEnumerator ActivateBigDemonAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // 설정된 시간만큼 대기
+
+            bigDemon.SetActive(true); // 활성화
+            Debug.Log("보스 등장");
+       
     }
 
     private void OnEnemyDeath()
